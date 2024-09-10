@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\UserController;
+
+Route::get('/register', [UserController::class, 'create']); // Display the form
+Route::post('/register', [UserController::class, 'store']); // Handle form submission
